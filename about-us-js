@@ -1,0 +1,44 @@
+document.addEventListener("DOMContentLoaded", function () {
+  // Set current date in mandi prices
+  const currentDate = new Date();
+  const options = { year: "numeric", month: "long", day: "numeric" };
+  document.getElementById("current-date").textContent =
+    currentDate.toLocaleDateString("en-IN", options);
+
+  // Animate elements when they come into view
+  const animateOnScroll = function () {
+    const elements = document.querySelectorAll(
+      ".about-container, .achievement-card, .founder-card, .team-card"
+    );
+
+    elements.forEach((element) => {
+      const elementPosition = element.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+
+      if (elementPosition < windowHeight - 100) {
+        element.style.opacity = "1";
+        element.style.transform = "translateY(0)";
+      }
+    });
+  };
+
+  // Set initial state for animation
+  document
+    .querySelectorAll(
+      ".about-container, .achievement-card, .founder-card, .team-card"
+    )
+    .forEach((element) => {
+      element.style.opacity = "0";
+      element.style.transform = "translateY(30px)";
+      element.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+    });
+
+  window.addEventListener("scroll", animateOnScroll);
+  window.addEventListener("load", animateOnScroll);
+
+  // Language switcher functionality
+  const languageSelect = document.getElementById("languageSelect");
+  languageSelect.addEventListener("change", function () {
+    alert(`Language changed to ${this.options[this.selectedIndex].text}`);
+  });
+});
