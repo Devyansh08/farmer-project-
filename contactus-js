@@ -1,0 +1,84 @@
+// JavaScript remains exactly the same as previous version
+document.addEventListener("DOMContentLoaded", function () {
+  // Mobile menu toggle
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("navLinks");
+  const authButtons = document.getElementById("authButtons");
+  const loginBtn = document.getElementById("loginBtn");
+  const signupBtn = document.getElementById("signupBtn");
+  const profileBtn = document.getElementById("profileBtn");
+
+  // Set current date in mandi prices dropdown
+  const currentDateElement = document.getElementById("current-date");
+  if (currentDateElement) {
+    const options = {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    };
+    currentDateElement.textContent = new Date().toLocaleDateString(
+      "en-IN",
+      options
+    );
+  }
+
+  // Toggle mobile menu
+  hamburger.addEventListener("click", function () {
+    navLinks.classList.toggle("active");
+    authButtons.classList.remove("active");
+  });
+
+  // Toggle auth buttons on profile click (for mobile)
+  if (profileBtn) {
+    profileBtn.addEventListener("click", function () {
+      authButtons.classList.toggle("active");
+      navLinks.classList.remove("active");
+    });
+  }
+
+  // Close dropdowns when clicking outside
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".nav-right") && !e.target.closest(".nav-links")) {
+      navLinks.classList.remove("active");
+      authButtons.classList.remove("active");
+    }
+  });
+
+  // Form submission
+  const contactForm = document.getElementById("contactForm");
+  const notification = document.getElementById("notification");
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      // Simulate form submission
+      showNotification("Your message has been sent successfully!");
+
+      // Reset form
+      contactForm.reset();
+    });
+  }
+
+  // Show notification
+  function showNotification(message) {
+    notification.textContent = message;
+    notification.classList.add("show");
+
+    setTimeout(() => {
+      notification.classList.remove("show");
+    }, 3000);
+  }
+
+  // Language selector functionality
+  const languageSelect = document.getElementById("languageSelect");
+  if (languageSelect) {
+    languageSelect.addEventListener("change", function () {
+      // In a real app, this would change the language
+      showNotification(
+        `Language changed to ${this.options[this.selectedIndex].text}`
+      );
+    });
+  }
+});
