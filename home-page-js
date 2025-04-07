@@ -45,13 +45,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector(".mandi-dropdown").style.display = "none";
   });
 
-  // Community button click
-  document
-    .getElementById("communityBtn")
-    .addEventListener("click", function () {
-      alert("Community feature coming soon!");
-    });
-
   // Login/Signup buttons
   document.getElementById("loginBtn").addEventListener("click", function () {
     alert("Login functionality will be implemented soon!");
@@ -60,6 +53,13 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("signupBtn").addEventListener("click", function () {
     alert("Signup functionality will be implemented soon!");
   });
+
+  // Community button
+  document
+    .getElementById("communityBtn")
+    .addEventListener("click", function () {
+      alert("Community feature coming soon!");
+    });
 
   // Smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Animate elements when they come into view
   const animateOnScroll = function () {
     const elements = document.querySelectorAll(
-      ".feature-card, .gallery-item, .testimonial-card"
+      ".feature-card, .testimonial-card"
     );
 
     elements.forEach((element) => {
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Set initial state for animation
   document
-    .querySelectorAll(".feature-card, .gallery-item, .testimonial-card")
+    .querySelectorAll(".feature-card, .testimonial-card")
     .forEach((element) => {
       element.style.opacity = "0";
       element.style.transform = "translateY(30px)";
@@ -106,7 +106,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // Language switcher functionality
   const languageSelect = document.getElementById("languageSelect");
   languageSelect.addEventListener("change", function () {
-    // In a real implementation, this would change the language of the content
     alert(`Language changed to ${this.options[this.selectedIndex].text}`);
   });
 
