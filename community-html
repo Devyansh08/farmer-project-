@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Community | Apna Krishi</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <link rel="stylesheet" href="/styles/community.css" />
+  </head>
+  <body>
+    <div class="background-image"></div>
+
+    <nav class="navbar">
+      <div class="nav-container">
+        <h1 class="site-title">Apna Krishi</h1>
+
+        <div class="nav-links" id="navLinks">
+          <a href="/">Home</a>
+          <a href="#">About Us</a>
+          <a href="#">Services</a>
+          <a href="#">Contact Us</a>
+          <a href="/community.html" class="active">Community</a>
+          <div class="mandi-prices">
+            <div class="mandi-icon">
+              <i class="fas fa-rupee-sign"></i>
+              <span class="pulse-dot"></span>
+            </div>
+            <span class="mandi-text">Market Rates</span>
+            <div class="mandi-dropdown">
+              <div class="mandi-header">
+                <h4>
+                  <i class="fas fa-chart-line"></i> Today's Prices (Quintal)
+                </h4>
+                <span id="current-date"></span>
+              </div>
+              <div class="mandi-content">
+                <div class="price-item trending-up">
+                  <div class="crop-info">
+                    <i class="fas fa-wheat"></i>
+                    <span>Wheat</span>
+                  </div>
+                  <div class="price-info">
+                    <span class="price">₹2,150</span>
+                    <span class="trend"
+                      ><i class="fas fa-arrow-up"></i> 2.3%</span
+                    >
+                  </div>
+                </div>
+                <div class="price-item trending-down">
+                  <div class="crop-info">
+                    <i class="fas fa-rice"></i>
+                    <span>Rice</span>
+                  </div>
+                  <div class="price-info">
+                    <span class="price">₹1,850</span>
+                    <span class="trend"
+                      ><i class="fas fa-arrow-down"></i> 1.1%</span
+                    >
+                  </div>
+                </div>
+                <div class="price-item trending-up">
+                  <div class="crop-info">
+                    <i class="fas fa-seedling"></i>
+                    <span>Soybean</span>
+                  </div>
+                  <div class="price-info">
+                    <span class="price">₹3,750</span>
+                    <span class="trend"
+                      ><i class="fas fa-arrow-up"></i> 4.7%</span
+                    >
+                  </div>
+                </div>
+                <div class="price-item trending-down">
+                  <div class="crop-info">
+                    <i class="fas fa-corn"></i>
+                    <span>Maize</span>
+                  </div>
+                  <div class="price-info">
+                    <span class="price">₹1,950</span>
+                    <span class="trend"
+                      ><i class="fas fa-arrow-down"></i> 0.8%</span
+                    >
+                  </div>
+                </div>
+                <a href="#" class="view-all">
+                  <span>View All Prices</span>
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="nav-right">
+          <div class="language-switcher">
+            <div class="language-selector">
+              <select id="languageSelect">
+                <option value="en">English</option>
+                <option value="hi">हिंदी</option>
+                <option value="mr">मराठी</option>
+                <option value="pa">ਪੰਜਾਬੀ</option>
+              </select>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+          </div>
+
+          <div class="auth-buttons" id="authButtons">
+            <button class="btn btn-login" id="loginBtn">
+              <i class="fas fa-sign-in-alt"></i>
+              <span>Login</span>
+            </button>
+            <button class="btn btn-signup" id="signupBtn">
+              <i class="fas fa-user-plus"></i>
+              <span>Sign Up</span>
+            </button>
+          </div>
+
+          <div class="profile" id="profileBtn">
+            <div class="profile-inner">
+              <i class="fas fa-user-circle"></i>
+            </div>
+          </div>
+
+          <div class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section class="community-hero">
+        <div class="container">
+          <h1>Farmer's Community Network</h1>
+          <p>
+            Connect with farmers in your area to share knowledge and resources
+          </p>
+        </div>
+      </section>
+
+      <section class="community-features">
+        <div class="container">
+          <h2>Community Features</h2>
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-comments"></i>
+              </div>
+              <h3>Discussion Forums</h3>
+              <p>
+                Join topic-based discussions with farmers facing similar
+                challenges
+              </p>
+              <a href="#" class="feature-link"
+                >Explore Forums <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-question-circle"></i>
+              </div>
+              <h3>Q&A Section</h3>
+              <p>
+                Get answers to your farming questions from experts and peers
+              </p>
+              <a href="#" class="feature-link"
+                >Ask Questions <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-calendar-alt"></i>
+              </div>
+              <h3>Events</h3>
+              <p>Find and join local farming events, workshops and meetups</p>
+              <a href="#" class="feature-link"
+                >View Events <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-exchange-alt"></i>
+              </div>
+              <h3>Resource Sharing</h3>
+              <p>
+                Share and access farming equipment, seeds and other resources
+              </p>
+              <a href="#" class="feature-link"
+                >Browse Resources <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="community-stats">
+        <div class="container">
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <div class="stat-content">
+                <h3>10,000+</h3>
+                <p>Active Farmers</p>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fas fa-comment-dots"></i>
+              </div>
+              <div class="stat-content">
+                <h3>25,000+</h3>
+                <p>Discussions</p>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fas fa-map-marked-alt"></i>
+              </div>
+              <div class="stat-content">
+                <h3>500+</h3>
+                <p>Villages Connected</p>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fas fa-handshake"></i>
+              </div>
+              <div class="stat-content">
+                <h3>5,000+</h3>
+                <p>Successful Collaborations</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials">
+        <div class="container">
+          <h2>What Our Community Members Say</h2>
+          <div class="testimonial-slider">
+            <div class="testimonial-card active">
+              <div class="testimonial-content">
+                <div class="quote-icon">
+                  <i class="fas fa-quote-left"></i>
+                </div>
+                <p>
+                  "Apna Krishi's community helped me solve my pest problem
+                  quickly. Other farmers suggested organic solutions that
+                  actually worked!"
+                </p>
+                <div class="user-info">
+                  <img src="assets/farmer1.jpg" alt="Rajesh Kumar" />
+                  <div>
+                    <h4>Rajesh Kumar</h4>
+                    <p>Wheat Farmer, Punjab</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="testimonial-content">
+                <div class="quote-icon">
+                  <i class="fas fa-quote-left"></i>
+                </div>
+                <p>
+                  "Through the resource sharing feature, I found a tractor owner
+                  nearby who helped me plow my field at reasonable rates."
+                </p>
+                <div class="user-info">
+                  <img src="assets/farmer2.jpg" alt="Sunita Devi" />
+                  <div>
+                    <h4>Sunita Devi</h4>
+                    <p>Vegetable Grower, Bihar</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="testimonial-content">
+                <div class="quote-icon">
+                  <i class="fas fa-quote-left"></i>
+                </div>
+                <p>
+                  "The Q&A section is my go-to place for farming advice. Experts
+                  and experienced farmers are always willing to help."
+                </p>
+                <div class="user-info">
+                  <img src="assets/farmer3.jpg" alt="Amir Khan" />
+                  <div>
+                    <h4>Amir Khan</h4>
+                    <p>Dairy & Crops, Maharashtra</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slider-controls">
+            <button class="slider-prev">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="slider-dots">
+              <span class="dot active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+            <button class="slider-next">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-section">
+        <div class="container">
+          <h2>Ready to Join Our Growing Community?</h2>
+          <p>Connect with farmers, share knowledge, and grow together</p>
+          <div class="cta-buttons">
+            <a href="#" class="btn btn-primary">Sign Up Now</a>
+            <a href="#" class="btn btn-outline">Learn More</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>Apna Krishi</h3>
+          <p>
+            Empowering farmers with technology and community support for
+            sustainable agriculture.
+          </p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="/community.html">Community</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#">Market Prices</a></li>
+            <li><a href="#">Weather Updates</a></li>
+            <li><a href="#">Expert Advice</a></li>
+            <li><a href="#">Government Schemes</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contact Us</h4>
+          <ul class="contact-info">
+            <li>
+              <i class="fas fa-map-marker-alt"></i> 123 Farm Road, Agri Zone,
+              India
+            </li>
+            <li><i class="fas fa-phone"></i> +91 9876543210</li>
+            <li><i class="fas fa-envelope"></i> info@apnakrishi.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 Apna Krishi. All Rights Reserved.</p>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/script.js"></script>
+    <script src="/script/community.js"></script>
+  </body>
+</html>
