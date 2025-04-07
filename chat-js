@@ -1,0 +1,137 @@
+document.addEventListener("DOMContentLoaded", function () {
+  // DOM Elements
+  const newChatBtn = document.getElementById("newChatBtn");
+  const newChatModal = document.getElementById("newChatModal");
+  const closeModalBtns = document.querySelectorAll(".close-modal");
+  const chatItems = document.querySelectorAll(".chat-item");
+  const messageInput = document.getElementById("messageInput");
+  const sendBtn = document.getElementById("sendBtn");
+  const chatMessages = document.getElementById("chatMessages");
+  const userSearch = document.getElementById("userSearch");
+
+  // Open new chat modal
+  newChatBtn.addEventListener("click", function () {
+    newChatModal.classList.add("active");
+  });
+
+  // Close modal
+  closeModalBtns.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      newChatModal.classList.remove("active");
+    });
+  });
+
+  // Close modal when clicking outside
+  newChatModal.addEventListener("click", function (e) {
+    if (e.target === newChatModal) {
+      newChatModal.classList.remove("active");
+    }
+  });
+
+  // Switch between chats
+  chatItems.forEach((item) => {
+    item.addEventListener("click", function () {
+      // Remove active class from all items
+      chatItems.forEach((i) => i.classList.remove("active"));
+
+      // Add active class to clicked item
+      this.classList.add("active");
+
+      // In a real app, you would load the chat messages here
+      // For demo, we're just showing the existing messages
+
+      // Scroll to bottom of messages
+      scrollToBottom();
+    });
+  });
+
+  // Send message
+  function sendMessage() {
+    const messageText = messageInput.value.trim();
+    if (messageText) {
+      // Create new message element
+      const messageDiv = document.createElement("div");
+      messageDiv.className = "message sent";
+
+      const contentDiv = document.createElement("div");
+      contentDiv.className = "message-content";
+
+      const messageP = document.createElement("p");
+      messageP.textContent = messageText;
+
+      const timeSpan = document.createElement("span");
+      timeSpan.className = "message-time";
+
+      // Get current time
+      const now = new Date();
+      const hours = now.getHours();
+      const minutes = now.getMinutes();
+      const ampm = hours >= 12 ? "PM" : "AM";
+      const formattedHours = hours % 12 || 12;
+      const formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
+      timeSpan.textContent = `${formattedHours}:${formattedMinutes} ${ampm}`;
+
+      // Append elements
+      contentDiv.appendChild(messageP);
+      contentDiv.appendChild(timeSpan);
+      messageDiv.appendChild(contentDiv);
+      chatMessages.appendChild(messageDiv);
+
+      // Clear input
+      messageInput.value = "";
+
+      // Scroll to bottom
+      scrollToBottom();
+
+      // In a real app, you would send the message to the server here
+    }
+  }
+
+  // Send message on button click
+  sendBtn.addEventListener("click", sendMessage);
+
+  // Send message on Enter key
+  messageInput.addEventListener("keypress", function (e) {
+    if (e.key === "Enter") {
+      sendMessage();
+    }
+  });
+
+  // Search users in modal
+  userSearch.addEventListener("input", function () {
+    const searchTerm = this.value.toLowerCase();
+    const userItems = document.querySelectorAll(".user-item");
+
+    userItems.forEach((item) => {
+      const userName = item.querySelector("h4").textContent.toLowerCase();
+      if (userName.includes(searchTerm)) {
+        item.style.display = "flex";
+      } else {
+        item.style.display = "none";
+      }
+    });
+  });
+
+  // Start new chat
+  document.querySelectorAll(".start-chat-btn").forEach((btn) => {
+    btn.addEventListener("click", function () {
+      const userItem = this.closest(".user-item");
+      const userName = userItem.querySelector("h4").textContent;
+
+      alert(
+        `Starting new chat with ${userName}. In a real app, this would open a new chat.`
+      );
+
+      // Close modal
+      newChatModal.classList.remove("active");
+    });
+  });
+
+  // Helper function to scroll to bottom of messages
+  function scrollToBottom() {
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  // Initial scroll to bottom
+  scrollToBottom();
+});
