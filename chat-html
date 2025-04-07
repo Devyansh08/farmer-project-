@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat | Apna Krishi</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/styles/chat.css" />
+  </head>
+  <body>
+    <div class="chat-container">
+      <!-- Chat sidebar -->
+      <div class="chat-sidebar">
+        <div class="chat-header">
+          <h2>Messages</h2>
+          <button class="new-chat-btn" id="newChatBtn">
+            <i class="fas fa-plus"></i>
+          </button>
+        </div>
+
+        <div class="search-bar">
+          <i class="fas fa-search"></i>
+          <input type="text" placeholder="Search messages..." />
+        </div>
+
+        <div class="chat-list">
+          <div class="chat-item active">
+            <img
+              src="assets/farmer1.jpg"
+              alt="Rajesh Kumar"
+              class="chat-avatar"
+            />
+            <div class="chat-info">
+              <h4>Rajesh Kumar</h4>
+              <p class="last-message">
+                Sure, I can deliver 50kg tomatoes tomorrow
+              </p>
+              <span class="time">10:30 AM</span>
+            </div>
+            <span class="unread-count">2</span>
+          </div>
+
+          <div class="chat-item">
+            <img
+              src="assets/farmer2.jpg"
+              alt="Priya Sharma"
+              class="chat-avatar"
+            />
+            <div class="chat-info">
+              <h4>Priya Sharma</h4>
+              <p class="last-message">
+                The wheat quality is excellent this season
+              </p>
+              <span class="time">Yesterday</span>
+            </div>
+          </div>
+
+          <div class="chat-item">
+            <img src="assets/farmer3.jpg" alt="Amir Khan" class="chat-avatar" />
+            <div class="chat-info">
+              <h4>Amir Khan</h4>
+              <p class="last-message">Let me check the stock availability</p>
+              <span class="time">2 days ago</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chat main area -->
+      <div class="chat-main">
+        <div class="chat-header">
+          <div class="user-info">
+            <img
+              src="assets/farmer1.jpg"
+              alt="Rajesh Kumar"
+              class="chat-avatar"
+            />
+            <div>
+              <h3>Rajesh Kumar</h3>
+              <p class="status">Online</p>
+            </div>
+          </div>
+          <div class="chat-actions">
+            <button class="action-btn"><i class="fas fa-phone"></i></button>
+            <button class="action-btn"><i class="fas fa-video"></i></button>
+            <button class="action-btn">
+              <i class="fas fa-ellipsis-v"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="chat-messages" id="chatMessages">
+          <div class="message-date">Today</div>
+
+          <div class="message received">
+            <img
+              src="assets/farmer1.jpg"
+              alt="Rajesh Kumar"
+              class="message-avatar"
+            />
+            <div class="message-content">
+              <p>
+                Hello! I have fresh tomatoes available from my farm. Are you
+                interested?
+              </p>
+              <span class="message-time">10:15 AM</span>
+            </div>
+          </div>
+
+          <div class="message sent">
+            <div class="message-content">
+              <p>Yes, what's the price per kg?</p>
+              <span class="message-time">10:18 AM</span>
+            </div>
+          </div>
+
+          <div class="message received">
+            <img
+              src="assets/farmer1.jpg"
+              alt="Rajesh Kumar"
+              class="message-avatar"
+            />
+            <div class="message-content">
+              <p>₹40 per kg for bulk orders above 20kg</p>
+              <span class="message-time">10:20 AM</span>
+            </div>
+          </div>
+
+          <div class="message sent">
+            <div class="message-content">
+              <p>That sounds good. Can you deliver 50kg tomorrow?</p>
+              <span class="message-time">10:25 AM</span>
+            </div>
+          </div>
+
+          <div class="message received">
+            <img
+              src="assets/farmer1.jpg"
+              alt="Rajesh Kumar"
+              class="message-avatar"
+            />
+            <div class="message-content">
+              <p>Sure, I can deliver 50kg tomatoes tomorrow</p>
+              <span class="message-time">10:30 AM</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="chat-input">
+          <button class="attach-btn"><i class="fas fa-paperclip"></i></button>
+          <input
+            type="text"
+            placeholder="Type your message..."
+            id="messageInput"
+          />
+          <button class="send-btn" id="sendBtn">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- New chat modal -->
+    <div class="modal" id="newChatModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>New Chat</h3>
+          <button class="close-modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="search-bar">
+            <i class="fas fa-search"></i>
+            <input
+              type="text"
+              placeholder="Search farmers or consumers..."
+              id="userSearch"
+            />
+          </div>
+
+          <div class="user-list">
+            <div class="user-item">
+              <img
+                src="assets/farmer1.jpg"
+                alt="Rajesh Kumar"
+                class="user-avatar"
+              />
+              <div class="user-info">
+                <h4>Rajesh Kumar</h4>
+                <p>Tomato Farmer | Barwani</p>
+              </div>
+              <button class="start-chat-btn">Chat</button>
+            </div>
+
+            <div class="user-item">
+              <img
+                src="assets/farmer2.jpg"
+                alt="Priya Sharma"
+                class="user-avatar"
+              />
+              <div class="user-info">
+                <h4>Priya Sharma</h4>
+                <p>Wheat Farmer | Punjab</p>
+              </div>
+              <button class="start-chat-btn">Chat</button>
+            </div>
+
+            <div class="user-item">
+              <img
+                src="assets/farmer3.jpg"
+                alt="Amir Khan"
+                class="user-avatar"
+              />
+              <div class="user-info">
+                <h4>Amir Khan</h4>
+                <p>Dairy & Crops | Maharashtra</p>
+              </div>
+              <button class="start-chat-btn">Chat</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/script/chat.js"></script>
+  </body>
+</html>
