@@ -1,0 +1,164 @@
+document.addEventListener("DOMContentLoaded", function () {
+  // Modal functionality
+  const addCropBtn = document.getElementById("addCropBtn");
+  const addCropModal = document.getElementById("addCropModal");
+  const closeModalBtns = document.querySelectorAll(".close-modal");
+  const cropForm = document.getElementById("cropForm");
+  const cropImageInput = document.getElementById("cropImage");
+  const imagePreview = document.getElementById("imagePreview");
+  const previewImage = document.getElementById("previewImage");
+
+  // Open modal
+  addCropBtn.addEventListener("click", function () {
+    addCropModal.classList.add("active");
+    document.body.style.overflow = "hidden";
+  });
+
+  // Close modal
+  closeModalBtns.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      addCropModal.classList.remove("active");
+      document.body.style.overflow = "auto";
+      cropForm.reset();
+      previewImage.style.display = "none";
+      imagePreview.querySelector("p").style.display = "block";
+    });
+  });
+
+  // Close modal when clicking outside
+  addCropModal.addEventListener("click", function (e) {
+    if (e.target === addCropModal) {
+      addCropModal.classList.remove("active");
+      document.body.style.overflow = "auto";
+      cropForm.reset();
+      previewImage.style.display = "none";
+      imagePreview.querySelector("p").style.display = "block";
+    }
+  });
+
+  // Image preview functionality
+  cropImageInput.addEventListener("change", function () {
+    const file = this.files[0];
+    if (file) {
+      const reader = new FileReader();
+
+      reader.addEventListener("load", function () {
+        previewImage.style.display = "block";
+        previewImage.setAttribute("src", this.result);
+        imagePreview.querySelector("p").style.display = "none";
+      });
+
+      reader.readAsDataURL(file);
+    }
+  });
+
+  // Form submission
+  cropForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Get form values
+    const cropName = document.getElementById("cropName").value;
+    const cropVariety = document.getElementById("cropVariety").value;
+    const cropSeason = document.getElementById("cropSeason").value;
+    const cropYield = document.getElementById("cropYield").value;
+
+    // In a real app, you would send this data to the server
+    console.log("New crop added:", {
+      cropName,
+      cropVariety,
+      cropSeason,
+      cropYield,
+      image: cropImageInput.files[0]
+        ? cropImageInput.files[0].name
+        : "No image",
+    });
+
+    // Show success message
+    alert("Crop added successfully to your portfolio!");
+
+    // Close modal and reset form
+    addCropModal.classList.remove("active");
+    document.body.style.overflow = "auto";
+    cropForm.reset();
+    previewImage.style.display = "none";
+    imagePreview.querySelector("p").style.display = "block";
+  });
+
+  // Notification bell click
+  const notificationBell = document.querySelector(".notification-bell");
+  notificationBell.addEventListener("click", function () {
+    alert("You have 3 new notifications");
+    this.querySelector(".notification-count").style.display = "none";
+  });
+
+  // Profile dropdown functionality
+  const profileBtn = document.getElementById("profileBtn");
+  const profileDropdown = document.createElement("div");
+  profileDropdown.className = "profile-dropdown";
+  profileDropdown.innerHTML = `
+    <a href="#"><i class="fas fa-user"></i> My Profile</a>
+    <a href="#"><i class="fas fa-cog"></i> Settings</a>
+    <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+  `;
+  profileBtn.appendChild(profileDropdown);
+
+  let dropdownVisible = false;
+
+  profileBtn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    dropdownVisible = !dropdownVisible;
+    profileDropdown.style.display = dropdownVisible ? "block" : "none";
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener("click", function () {
+    dropdownVisible = false;
+    profileDropdown.style.display = "none";
+  });
+
+  // Crop item actions
+  document.querySelectorAll(".crop-item .action-btn").forEach((btn) => {
+    btn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      const cropItem = this.closest(".crop-item");
+
+      if (this.querySelector(".fa-trash")) {
+        if (
+          confirm(
+            "Are you sure you want to delete this crop from your portfolio?"
+          )
+        ) {
+          cropItem.style.transform = "scale(0.9)";
+          cropItem.style.opacity = "0";
+          setTimeout(() => {
+            cropItem.remove();
+          }, 300);
+        }
+      } else if (this.querySelector(".fa-edit")) {
+        // Open edit modal with existing values
+        addCropModal.classList.add("active");
+        document.body.style.overflow = "hidden";
+
+        // In a real app, you would populate the form with existing crop data
+        document.getElementById("cropName").value =
+          cropItem.querySelector("h3").textContent;
+        document.getElementById("cropVariety").value =
+          cropItem.querySelector("p").textContent;
+
+        // Set a flag to indicate this is an edit operation
+        cropForm.dataset.editing = "true";
+      }
+    });
+  });
+
+  // Close modal with Escape key
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && addCropModal.classList.contains("active")) {
+      addCropModal.classList.remove("active");
+      document.body.style.overflow = "auto";
+      cropForm.reset();
+      previewImage.style.display = "none";
+      imagePreview.querySelector("p").style.display = "block";
+    }
+  });
+});
