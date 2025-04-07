@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Farmer Profile | Apna Krishi</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/styles/profile.css" />
+  </head>
+  <body>
+    <div class="background-image"></div>
+
+    <nav class="navbar">
+      <div class="nav-container">
+        <h1 class="site-title">Apna Krishi</h1>
+        <div class="nav-links" id="navLinks">
+          <a href="/">Home</a>
+          <a href="#">Community</a>
+          <a href="#" class="active">Profile</a>
+          <a href="#">Marketplace</a>
+        </div>
+        <div class="nav-right">
+          <div class="notification-bell">
+            <i class="fas fa-bell"></i>
+            <span class="notification-count">3</span>
+          </div>
+          <div class="profile" id="profileBtn">
+            <img
+              src="https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+              alt="Farmer Profile"
+            />
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="profile-container">
+      <section class="profile-header">
+        <div class="cover-photo">
+          <img src="/assets/profile-bg.png" alt="Farm Cover Photo" />
+          <button class="edit-cover-btn">
+            <i class="fas fa-camera"></i> Edit Cover
+          </button>
+        </div>
+        <div class="profile-info">
+          <div class="profile-picture">
+            <img src="/assets/profile-img.png" alt="Farmer Profile" />
+            <button class="edit-profile-btn">
+              <i class="fas fa-camera"></i>
+            </button>
+          </div>
+          <div class="profile-details">
+            <h1>Rajesh Kumar</h1>
+            <p class="profession">
+              <i class="fas fa-tractor"></i> Farmer & Agripreneur
+            </p>
+            <p class="location">
+              <i class="fas fa-map-marker-alt"></i> Barwani, Madhya Pradesh
+            </p>
+
+            <div class="profile-stats">
+              <div class="stat-item">
+                <span class="stat-number">15</span>
+                <span class="stat-label">Years Experience</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">45</span>
+                <span class="stat-label">Acres</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">8</span>
+                <span class="stat-label">Crops</span>
+              </div>
+            </div>
+
+            <div class="profile-actions">
+              <button class="btn btn-primary">
+                <i class="fas fa-share-alt"></i> Share Profile
+              </button>
+              <button class="btn btn-outline">
+                <i class="fas fa-edit"></i> Edit Profile
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="profile-content">
+        <div class="profile-left">
+          <div class="profile-card about-card">
+            <div class="card-header">
+              <h2>About</h2>
+              <button class="edit-btn">
+                <i class="fas fa-pencil-alt"></i>
+              </button>
+            </div>
+            <div class="card-body">
+              <p>
+                Passionate farmer with 15 years of experience in organic
+                farming. Specialized in soybean and wheat cultivation. Advocate
+                for sustainable farming practices and member of local farmer's
+                cooperative.
+              </p>
+
+              <div class="about-details">
+                <div class="detail-item">
+                  <i class="fas fa-home"></i>
+                  <div>
+                    <span class="detail-label">Farm Name</span>
+                    <span class="detail-value">Kumar Organic Farms</span>
+                  </div>
+                </div>
+                <div class="detail-item">
+                  <i class="fas fa-phone"></i>
+                  <div>
+                    <span class="detail-label">Contact</span>
+                    <span class="detail-value">+91 9876543210</span>
+                  </div>
+                </div>
+                <div class="detail-item">
+                  <i class="fas fa-envelope"></i>
+                  <div>
+                    <span class="detail-label">Email</span>
+                    <span class="detail-value">rajesh@kumarfarms.com</span>
+                  </div>
+                </div>
+                <div class="detail-item">
+                  <i class="fas fa-certificate"></i>
+                  <div>
+                    <span class="detail-label">Certifications</span>
+                    <span class="detail-value">Organic, Fair Trade</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="profile-card experience-card">
+            <div class="card-header">
+              <h2>Farming Experience</h2>
+              <button class="edit-btn">
+                <i class="fas fa-pencil-alt"></i>
+              </button>
+            </div>
+            <div class="card-body">
+              <div class="experience-item">
+                <div class="exp-logo">
+                  <i class="fas fa-tractor"></i>
+                </div>
+                <div class="exp-details">
+                  <h3>Owner & Farmer</h3>
+                  <p class="exp-company">Kumar Organic Farms</p>
+                  <p class="exp-duration">2008 - Present · 15 yrs</p>
+                  <p class="exp-description">
+                    Managing 45 acres of farmland with crops including soybean,
+                    wheat, and pulses. Implemented drip irrigation and organic
+                    farming techniques.
+                  </p>
+                </div>
+              </div>
+
+              <div class="experience-item">
+                <div class="exp-logo">
+                  <i class="fas fa-users"></i>
+                </div>
+                <div class="exp-details">
+                  <h3>Board Member</h3>
+                  <p class="exp-company">Barwani Farmers Cooperative</p>
+                  <p class="exp-duration">2015 - Present · 8 yrs</p>
+                  <p class="exp-description">
+                    Helping local farmers adopt modern techniques and get better
+                    market prices.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-right">
+          <div class="profile-card crop-portfolio">
+            <div class="card-header">
+              <h2>My Crop Portfolio</h2>
+              <button class="add-btn" id="addCropBtn">
+                <i class="fas fa-plus"></i> Add Crop
+              </button>
+            </div>
+            <div class="card-body">
+              <div class="crop-gallery">
+                <div class="crop-item">
+                  <img
+                    src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                    alt="Wheat Crop"
+                  />
+                  <div class="crop-info">
+                    <h3>Wheat</h3>
+                    <p>Sharbati Variety</p>
+                    <div class="crop-stats">
+                      <span
+                        ><i class="fas fa-calendar-alt"></i> Rabi Season</span
+                      >
+                      <span
+                        ><i class="fas fa-weight-hanging"></i> 25
+                        Quintals/Acre</span
+                      >
+                    </div>
+                  </div>
+                  <div class="crop-actions">
+                    <button class="action-btn">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="action-btn">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="crop-item">
+                  <img
+                    src="https://images.unsplash.com/photo-1585011650347-c59dbef5a823?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                    alt="Soybean Crop"
+                  />
+                  <div class="crop-info">
+                    <h3>Soybean</h3>
+                    <p>JS 335 Variety</p>
+                    <div class="crop-stats">
+                      <span
+                        ><i class="fas fa-calendar-alt"></i> Kharif Season</span
+                      >
+                      <span
+                        ><i class="fas fa-weight-hanging"></i> 18
+                        Quintals/Acre</span
+                      >
+                    </div>
+                  </div>
+                  <div class="crop-actions">
+                    <button class="action-btn">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="action-btn">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="crop-item">
+                  <img
+                    src="https://images.unsplash.com/photo-1594282416549-65a5d545094e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                    alt="Pulses Crop"
+                  />
+                  <div class="crop-info">
+                    <h3>Chickpea</h3>
+                    <p>Desi Variety</p>
+                    <div class="crop-stats">
+                      <span
+                        ><i class="fas fa-calendar-alt"></i> Rabi Season</span
+                      >
+                      <span
+                        ><i class="fas fa-weight-hanging"></i> 12
+                        Quintals/Acre</span
+                      >
+                    </div>
+                  </div>
+                  <div class="crop-actions">
+                    <button class="action-btn">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="action-btn">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="profile-card weather-card">
+            <div class="card-header">
+              <h2>Weather Forecast</h2>
+            </div>
+            <div class="card-body">
+              <div class="weather-info">
+                <div class="weather-current">
+                  <div class="weather-icon sunny">
+                    <i class="fas fa-sun"></i>
+                  </div>
+                  <div class="weather-details">
+                    <h3>Sunny</h3>
+                    <p class="temperature">32°C</p>
+                    <p class="location">
+                      <i class="fas fa-map-marker-alt"></i> Barwani
+                    </p>
+                  </div>
+                </div>
+                <div class="weather-forecast">
+                  <div class="forecast-item">
+                    <p>Tomorrow</p>
+                    <i class="fas fa-cloud-sun"></i>
+                    <p>31°C</p>
+                  </div>
+                  <div class="forecast-item">
+                    <p>Day After</p>
+                    <i class="fas fa-cloud-rain"></i>
+                    <p>28°C</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Add Crop Modal -->
+    <div class="modal" id="addCropModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Add New Crop</h3>
+          <button class="close-modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form id="cropForm">
+            <div class="form-group">
+              <label for="cropName">Crop Name</label>
+              <input
+                type="text"
+                id="cropName"
+                placeholder="e.g. Wheat, Soybean"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="cropVariety">Variety</label>
+              <input
+                type="text"
+                id="cropVariety"
+                placeholder="e.g. Sharbati, JS 335"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="cropSeason">Season</label>
+              <select id="cropSeason" required>
+                <option value="">Select Season</option>
+                <option value="Rabi">Rabi</option>
+                <option value="Kharif">Kharif</option>
+                <option value="Zaid">Zaid</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="cropYield">Yield (Quintal/Acre)</label>
+              <input
+                type="number"
+                id="cropYield"
+                placeholder="e.g. 15"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="cropImage">Upload Image</label>
+              <div class="image-upload">
+                <label for="cropImage" class="upload-btn">
+                  <i class="fas fa-cloud-upload-alt"></i>
+                  <span>Choose Image</span>
+                  <input type="file" id="cropImage" accept="image/*" />
+                </label>
+                <div class="image-preview" id="imagePreview">
+                  <img id="previewImage" style="display: none" />
+                  <p>No image selected</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="button" class="btn btn-cancel close-modal">
+                Cancel
+              </button>
+              <button type="submit" class="btn btn-primary">Add Crop</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>Apna Krishi</h3>
+          <p>
+            Empowering farmers with technology and community support for
+            sustainable agriculture.
+          </p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#">Market Prices</a></li>
+            <li><a href="#">Weather Updates</a></li>
+            <li><a href="#">Expert Advice</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 Apna Krishi. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
